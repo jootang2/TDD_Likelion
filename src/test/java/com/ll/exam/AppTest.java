@@ -37,4 +37,12 @@ public class AppTest {
 
         assertEquals(100, rs);
     }
+
+    @Test
+
+    public void 나누기(){
+        int rs = Calculator.calc("10 / 10");
+
+        assertEquals(1, rs);
+    }
 }

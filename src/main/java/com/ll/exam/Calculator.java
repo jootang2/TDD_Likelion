@@ -2,6 +2,7 @@ package com.ll.exam;
 
 public class Calculator {
     public static int calc(String s) {
+        boolean isDivide = s.indexOf(" / ") != -1;
         boolean isMulti = s.indexOf(" * ") != -1;
         boolean isMinus = s.indexOf(" - ") != -1;
         // '-' 가 없으면 -1
@@ -15,6 +16,12 @@ public class Calculator {
             return calcMulti(s);
 
         }
+
+        else if (isDivide){
+            return calcDivide(s);
+
+        }
+
 
         return calcPlus(s);
 
@@ -46,5 +53,13 @@ public class Calculator {
         int no2 = Integer.parseInt(sBits[1]);
 
         return no1 * no2;
+    }
+
+    private static int calcDivide(String s) {
+        String[] sBits = s.split(" \\/ ");
+        int no1 = Integer.parseInt(sBits[0]);
+        int no2 = Integer.parseInt(sBits[1]);
+
+        return no1 / no2;
     }
 }
